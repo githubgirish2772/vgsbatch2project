@@ -7,13 +7,7 @@
 #include "splash.h"
 #include "login.h"
 #include "rectangle.h"
-#include "triangle.h"
-#include "circle.h"
-#include "cone.h"
-#include "cube.h"
 #include "cuboid.h"
-#include "sphere.h"
-#include "cylinder.h"
 
 void setcolor(int ForgC)
 { 
@@ -26,34 +20,6 @@ void setcolor(int ForgC)
 		wColor=(csbi.wAttributes & 0xB0)+(ForgC & 0x0B);
 	//	SetConsoleTextAttributes(hStdOut,wColor);
 		SetConsoleTextAttribute(hStdOut,wColor);
-	}
-}
-
-int main11(){     // MAIN FUNCTION	
-	int i=0;
-	time_t t;
-	time(&t);
-	
-	char choice;
-
-	system("cls");   // FOR CLEARING SCREEN
-	setcolor(15);
-	splash();
-    system("cls");
-    
-    //login();
-    system("cls");
-	while (1)      // INFINITE LOOP
-	{
-		system("cls");
-		setcolor(10);
-		for(i=0;i<80;i++)
-			printf("-");
-		printf("\n");
-		printf("   ******************************  |MAIN MENU|  ***************************** \n");
-		
-		getche();
-		break;
 	}
 }
 
@@ -99,39 +65,7 @@ void exitApp() {
 }
 
 void manageTriangle(){
-	char choice;
-	do
-	{
-		system("cls");
-		int b,h;
-		char opt;
-	    centerText("======= TRIANGLE =======", 5);
-		printText("Enter Base: ", 8,50);
-	    scanf("%d", &b);
-	    printText("Enter Height: ", 9,50);
-	    scanf("%d", &h);
-	    printText("Press A-Area,P-Perimeter : ", 10,50);
-	    getchar();
-	    scanf("%c", &opt);
-	    switch (opt) {
-	            case 'A': case 'a': 
-						gotoxy(50,11); 
-						printf("Area : %.2f",area_triangle(b,h));
-						break;
-	            case 'P': case 'p':
-	            		gotoxy(50,11); 
-						//printf("Perimeter : %d",perimeter_rectangle(l,b));
-						break;
-	            default :  
-	            		gotoxy(50,11); 
-						printf("Invalid Option!");
-						break;
-	        }
-	    printText("Do you want to Continue(y/n)? : ", 12,50);
-	    getchar();
-	    scanf("%c", &choice);
-	}
-	while(choice == 'y');
+	
 	
 }
 void manageRectangle(){
@@ -170,111 +104,13 @@ void manageRectangle(){
 	while(choice == 'y');
 }
 void manageCircle(){
-	char choice;
-	do
-	{
-		system("cls");
-		int r;
-		char opt;
-	    centerText("======= CIRCLE =======", 5);
-		printText("Enter Radius: ", 8,50);
-	    scanf("%d", &r);
-	    
-	    printText("Press A-Area,C-Circumference : ", 9,50);
-	    getchar();
-	    scanf("%c", &opt);
-	    switch (opt) {
-	            case 'A': case 'a': 
-						gotoxy(50,10); 
-						printf("Area : %.2f",area_circle(r));
-						break;
-	            case 'C': case 'c':
-	            		gotoxy(50,10); 
-						printf("Circumference : %.2f",circumference_circle(r));
-						break;
-	            default :  
-	            		gotoxy(50,10); 
-						printf("Invalid Option!");
-						break;
-	        }
-	    printText("Do you want to Continue(y/n)? : ", 11,50);
-	    getchar();
-	    scanf("%c", &choice);
-	}
-	while(choice == 'y');
+	
 }
 void manageCone(){
-	char choice;
-	do
-	{
-		system("cls");
-		int h,r;
-		char opt;
-	    centerText("======= CONE =======", 5);
-		printText("Enter Height: ", 8,50);
-	    scanf("%d", &h);
-	    printText("Enter Radius: ", 9,50);
-	    scanf("%d", &r);
-	    printText("Press A-Area,V-Volume : ", 10,50);
-	    getchar();
-	    scanf("%c", &opt);
-	    switch (opt) {
-	            case 'A': case 'a': 
-						gotoxy(50,11); 
-						printf("Area : %.2f",area_cone(h,r));
-						break;
-	            case 'V': case 'v':
-	            		gotoxy(50,11); 
-						printf("Volume : %.2f",volume_cone(h,r));
-						break;
-	            default :  
-	            		gotoxy(50,11); 
-						printf("Invalid Option!");
-						break;
-	        }
-	    printText("Do you want to Continue(y/n)? : ", 12,50);
-	    getchar();
-	    scanf("%c", &choice);
-	}
-	while(choice == 'y');
+	
 }
 void manageCube(){
-	char choice;
-	do
-	{
-		system("cls");
-		int side;
-		char opt;
-	    centerText("======= CUBE =======", 5);
-		printText("Enter Side: ", 8,50);
-	    scanf("%d", &side);
-	    
-	    printText("Press A-Area,V-Volume,L-Lateral Area : ", 9,50);
-	    getchar();
-	    scanf("%c", &opt);
-	    switch (opt) {
-	            case 'A': case 'a': 
-						gotoxy(50,10); 
-						printf("Area : %.2f",area_cube(side));
-						break;
-	            case 'V': case 'v':
-	            		gotoxy(50,10); 
-						printf("Volume : %.2f",volume_cube(side));
-						break;
-				case 'L': case 'l':
-	            		gotoxy(50,10); 
-						printf("Lateral Area : %.2f",lateralarea_cube(side));
-						break;
-	            default :  
-	            		gotoxy(50,10); 
-						printf("Invalid Option!");
-						break;
-	        }
-	    printText("Do you want to Continue(y/n)? : ", 11,50);
-	    getchar();
-	    scanf("%c", &choice);
-	}
-	while(choice == 'y');
+	
 }
 void manageCuboid(){
 	char choice;
@@ -320,78 +156,11 @@ void manageCuboid(){
 	
 }
 void manageCylinder(){
-	char choice;
-	do
-	{
-		system("cls");
-		int r,h;
-		char opt;
-	    centerText("======= CYLINDER =======", 5);
-		printText("Enter Radius: ", 8,50);
-	    scanf("%d", &r);
-	    printText("Enter Height: ", 9,50);
-	    scanf("%d", &h);
-	    printText("Press A-Area,V-Volume : ", 10,50);
-	    getchar();
-	    scanf("%c", &opt);
-	    switch (opt) {
-	            case 'A': case 'a': 
-						gotoxy(50,11); 
-						printf("Area : %.2f",area_cylinder(r,h));
-						break;
-	            case 'V': case 'v':
-	            		gotoxy(50,11); 
-						printf("Volume : %.2f",volume_cylinder(r,h));
-						break;
-	            default :  
-	            		gotoxy(50,11); 
-						printf("Invalid Option!");
-						break;
-	        }
-	    printText("Do you want to Continue(y/n)? : ", 12,50);
-	    getchar();
-	    scanf("%c", &choice);
-	}
-	while(choice == 'y');
+	
 	
 }
 void manageSphere(){
-	char choice;
-	do
-	{
-		system("cls");
-		int r;
-		char opt;
-	    centerText("======= SPHERE =======", 5);
-		printText("Enter Radius: ", 8,50);
-	    scanf("%d", &r);
-	    
-	    printText("Press A-Area,V-VolumeC-Circumference : ", 9,50);
-	    getchar();
-	    scanf("%c", &opt);
-	    switch (opt) {
-	            case 'A': case 'a': 
-						gotoxy(50,10); 
-						printf("Area : %.2f",area_sphere(r));
-						break;
-	            case 'V': case 'v':
-	            		gotoxy(50,10); 
-						printf("Volume : %.2f",volume_sphere(r));
-						break;
-				case 'C': case 'c':
-	            		gotoxy(50,10); 
-						printf("Circumference : %.2f",circumference_sphere(r));
-						break;
-	            default :  
-	            		gotoxy(50,10); 
-						printf("Invalid Option!");
-						break;
-	        }
-	    printText("Do you want to Continue(y/n)? : ", 11,50);
-	    getchar();
-	    scanf("%c", &choice);
-	}
-	while(choice == 'y');
+	
 }
 
 void mainmenu() {
