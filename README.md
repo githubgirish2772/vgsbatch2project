@@ -1,3 +1,3 @@
-# vgsproject1
+# vgsbatch2project
 Geomentrical project - This project is to calculate area, perimeter, surface area and volume of different shaphes provided in Main Menu.
 
