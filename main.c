@@ -127,21 +127,25 @@ void manageCuboid(){
 	    printText("Enter Height: ", 10,50);
 	    scanf("%d", &h);
 	    
-	    printText("Press A-Surface Area,V-Volume,S-Space Diagonal : ", 11,50);
+	    printText("Press A-Surface Area,L-Lateral Surface Area,V-Volume,S-Space Diagonal : ", 11,50);
 	    getchar();
 	    scanf("%c", &opt);
 	    switch (opt) {
 	            case 'A': case 'a': 
 						gotoxy(50,12); 
-						printf("Surface Area : %.2f",surfaceArea_cuboid(l,b,h));
+						printf("Surface Area : %.2f",tsa_cuboid (l,b,h));
+						break;
+		    case 'L': case 'l': 
+						gotoxy(50,12); 
+						printf("Lateral Surface Area : %.2f",lsa_cuboid  (l,b,h));
 						break;
 	            case 'V': case 'v':
 	            		gotoxy(50,12); 
 						printf("Volume : %.2f",volume_cuboid(l,b,h));
 						break;
-				case 'S': case 's':
+		    case 'S': case 's':
 	            		gotoxy(50,12); 
-						printf("Space Diagonal : %.2f",spaceDiagonal_cuboid(l,b,h));
+						printf("Space Diagonal : %.2f",diagonal_cuboid (l,b,h));
 						break;
 	            default :  
 	            		gotoxy(50,12); 
