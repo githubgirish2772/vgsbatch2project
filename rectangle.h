@@ -1,15 +1,8 @@
-
-
-int area_rectangle(int a,int b)
+float rectangle_area (float l,float b)
 {
-	int area;
-	area = a*b;
-	return area;
+	return l*b;
 }
-
-int perimeter_rectangle(int a,int b)
+float rectangle_area (float l,float b)
 {
-	int peri;
-	peri = 2 * ( a + b);
-	return peri;
+	return 2*(l+b);
 }
